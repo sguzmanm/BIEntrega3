@@ -16,6 +16,8 @@ public class DimEgresado extends Reportable {
     private String nivelVinculacionEgresado;
 
     private double indiceRelacionamiento;
+    
+    private double indiceRelacionamientoEstandarizado;
 
     private int idPerfilPractica;
 
@@ -27,7 +29,7 @@ public class DimEgresado extends Reportable {
     public String toString()
     {
         return edadEgresado+";"+generoEgresado+";"+celularPrincipalEgresado+";"+emailEgresado+
-                ";"+nivelVinculacionEgresado+";"+indiceRelacionamiento+";"+idPerfilGrado+";"+
+                ";"+nivelVinculacionEgresado+";"+indiceRelacionamiento+";"+indiceRelacionamientoEstandarizado+";"+idPerfilGrado+";"+
                 idPerfilPersonal+";"+idPerfilPractica;
     }
     //Class headers
@@ -128,6 +130,16 @@ public class DimEgresado extends Reportable {
 
     public void setIdPerfilGrado(int idPerfilGrado) {
         this.idPerfilGrado = idPerfilGrado;
+    }
+    
+    public double getIndiceRelacionamientoEstandarizado()
+    {
+    	return indiceRelacionamientoEstandarizado;
+    }
+    
+    public void setIndiceRelacionamientoEstandarizado(double a)
+    {
+    	indiceRelacionamientoEstandarizado=a;
     }
 
 

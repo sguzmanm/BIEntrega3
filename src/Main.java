@@ -88,7 +88,7 @@ public class Main {
     // Facultad	Fecha fin
     public static void lecturaEventos() throws Exception {
         BufferedReader br = new  BufferedReader(
-                new InputStreamReader(new FileInputStream("./data/P_eventos.csv"), "UTF-8"));
+                new InputStreamReader(new FileInputStream("./data/P_eventos_total.csv"), "UTF-8"));
         String linea=br.readLine();
         linea=br.readLine();
 
@@ -383,7 +383,7 @@ public class Main {
     public static void lecturaGradosOtorgados() throws Exception
     {
         BufferedReader br = new  BufferedReader(
-                new InputStreamReader(new FileInputStream("./data/P_grados.csv"), "UTF-8"));
+                new InputStreamReader(new FileInputStream("./data/P_grados_total.csv"), "UTF-8"));
         String linea=br.readLine();
 
         while(linea!=null)
@@ -410,7 +410,7 @@ public class Main {
     {
 
         BufferedReader br = new  BufferedReader(
-                new InputStreamReader(new FileInputStream("./data/P_historico.csv"), "UTF-8"));
+                new InputStreamReader(new FileInputStream("./data/P_historico_total.csv"), "UTF-8"));
         String linea=br.readLine();
         linea=br.readLine();
         ArrayList<String> llaves=new ArrayList<>();
@@ -482,6 +482,7 @@ public class Main {
                 new InputStreamReader(new FileInputStream("./data/P_egresados.csv"), "UTF-8"));
         String linea=br.readLine();
         linea=br.readLine();
+        double maxInd=0;
         while(linea!=null) {
             linea = toTitleCase(linea);
             linea = linea.replaceAll(";;", "; ;");
@@ -574,6 +575,11 @@ public class Main {
                 perfilEgresado.setGeneroEgresado("D");
             perfilEgresado.setIndiceRelacionamiento(Double.parseDouble(data[15].replaceAll(",", ".")));
             perfilEgresado.setNivelVinculacionEgresado(data[11]);
+            if(perfilEgresado.getIndiceRelacionamiento()>maxInd)
+        	{
+            	maxInd=perfilEgresado.getIndiceRelacionamiento();
+            	System.out.println("NEW IND "+maxInd);
+        	}
             if (data[4].trim().equals(""))
                 perfilEgresado.setCelularPrincipalEgresado("0");
             else
@@ -620,11 +626,20 @@ public class Main {
 
         }
         br.close();
+        //Colocar el índice estandarizado
+        System.out.println("MAX IND "+maxInd);
+        if(maxInd==0)
+        	maxInd=1;
+        for (String s: egresados.keySet())
+        {
+        	DimEgresado egresado=egresados.get(s);
+        	egresado.setIndiceRelacionamientoEstandarizado(egresado.getIndiceRelacionamiento()/maxInd);
+        }
     }
 
     public static void generarBaseDiccionario() throws Exception{
         BufferedReader br = new  BufferedReader(
-                new InputStreamReader(new FileInputStream("./data/P_eventos.csv"), "UTF-8"));
+                new InputStreamReader(new FileInputStream("./data/P_eventos_total.csv"), "UTF-8"));
         String linea=br.readLine();
         String[] temp = linea.split(";");
         int indice=2;
@@ -677,7 +692,11 @@ public class Main {
 
     public static void main (String[] args) throws Exception
     {
-        crearDiccionario();
+    	System.out.println(0.2/0.5);
+    	double a=0.2;
+    	a/=0.5;
+    	System.out.println(a);
+    	crearDiccionario();
         lecturaEquivalencias();
         lecturaEventos();
         lecturaCTP();

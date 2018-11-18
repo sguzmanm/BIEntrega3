@@ -7,6 +7,7 @@ celularPrincipalEgresado VARCHAR (1) ,
 emailEgresado VARCHAR (1) ,
 nivelVinculacionEgresado VARCHAR(10) ,
 indiceRelacionamiento FLOAT(2) ,
+indiceRelacionamientoEstandarizado FLOAT(2) ,
 idPerfilPractica INT ,
 idPerfilPersonal INT ,
 idPerfilGrado INT 

@@ -1,9 +1,9 @@
-DimFechaInicio;;;id;anhoEvento;semestreEvento;cuatrimestreEvento;mesEvento;diaEvento;;;;
-DimFechaFin;;;id;anhoEvento;semestreEvento;cuatrimestreEvento;mesEvento;diaEvento;;;;
-DimEvento;;;id;"nombreEvento	";"categoriaEvento	";"tipoEvento	";codigoEvento;;;;;
-DimUnidadAcademica;;;id;areaFacultad;facultad;departamento;;;;;;
-DimEgresado;;;id;edadEgresado;generoEgresado;celularPrincipalEgresado;emailEgresado;nivelVinculacionEgresado;indiceRelacionamiento;idPerfilPractica;idPerfilPersonal;idPerfilGrado
-DimPerfilGrado;;;id;beneficiarioQE;gradoEgresado;nivelGrado;semestreGrado;;;;;
-DimPerfilPersonal;;;id;paisResidenciaActual;estadoResidenciaActual;ciudadResidenciaActual;empresaActual;cargoActual;donante;profesor;fechaActualizacion;fechaExpiracion
-DimPerfilPracticante;;;id;comunicacionVerbal;autonomiaEIniciativa;compromisoEtico;disposicionAlAprendizaje;semestrePractica;;;;
-HechoInscribirseAEvento;;;asistencia;inscripcion;idEgresado;idEvento;idFechaInicio;idFechaFin;idUnidadAcademica;idPerfilPractica;idPerfilPersonal;idPerfilGrado
+DimFechaInicio;;;id;anhoEvento;semestreEvento;cuatrimestreEvento;mesEvento;diaEvento;;;;;
+DimFechaFin;;;id;anhoEvento;semestreEvento;cuatrimestreEvento;mesEvento;diaEvento;;;;;
+DimEvento;;;id;"nombreEvento	";"categoriaEvento	";"tipoEvento	";codigoEvento;;;;;;
+DimUnidadAcademica;;;id;areaFacultad;facultad;departamento;;;;;;;
+DimEgresado;;;id;edadEgresado;generoEgresado;celularPrincipalEgresado;emailEgresado;nivelVinculacionEgresado;indiceRelacionamiento;indiceRelacionamientoEstandarizado;idPerfilPractica;idPerfilPersonal;idPerfilGrado
+DimPerfilGrado;;;id;beneficiarioQE;gradoEgresado;nivelGrado;semestreGrado;;;;;;
+DimPerfilPersonal;;;id;paisResidenciaActual;estadoResidenciaActual;ciudadResidenciaActual;empresaActual;cargoActual;donante;profesor;fechaActualizacion;fechaExpiracion;
+DimPerfilPracticante;;;id;comunicacionVerbal;autonomiaEIniciativa;compromisoEtico;disposicionAlAprendizaje;semestrePractica;;;;;
+HechoInscribirseAEvento;;;asistencia;inscripcion;idEgresado;idEvento;idFechaInicio;idFechaFin;idUnidadAcademica;idPerfilPractica;idPerfilPersonal;idPerfilGrado;
