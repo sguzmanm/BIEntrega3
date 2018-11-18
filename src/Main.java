@@ -17,9 +17,10 @@ public class Main {
     static int idPerfilGrado=1;
     static int idPerfilPersonal=1;
     static int idEgresado=1;
-
+    //Formato de fechas
     public static final SimpleDateFormat FORMATO_FECHA=new SimpleDateFormat("dd/MM/yyyy");
 
+    //Hash maps de todo
     static HashMap<String,String> equiv = new HashMap<>();
 
     static HashMap<String,String> dic = new HashMap<>();
@@ -44,6 +45,10 @@ public class Main {
 
     private static MiniDimensiones miniDimensiones= new MiniDimensiones();
 
+    //Relación con la clase de tabla agregada
+    private static AggregatedTableManager agregatedTableManager=new AggregatedTableManager();
+    
+    //Convertir el semestre a una fecha
     public static Date convertirSemestre (String semestre, boolean inicio) throws Exception
     {
         String[] mes=new String[]{"01","06","08"};
@@ -56,7 +61,7 @@ public class Main {
             return FORMATO_FECHA.parse("01/"+mes[1]+"/"+data[0]);
         return FORMATO_FECHA.parse("01/"+mes[2]+"/" + data[0]);
     }
-
+    //Crear el diccionario
     public static void crearDiccionario() throws Exception{
         BufferedReader br = new  BufferedReader(
                 new InputStreamReader(new FileInputStream("./data/diccionario.csv"), "UTF-8"));
@@ -688,6 +693,11 @@ public class Main {
             pw.println(key+";"+hash.get(key));
         br.close();
         pw.close();
+    }
+    
+    public static void crearTablaAgregada()
+    {
+    	//TODO Completar método como se guste para crear la tabla agregada
     }
 
     public static void main (String[] args) throws Exception
